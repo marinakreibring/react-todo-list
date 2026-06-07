@@ -72,7 +72,7 @@ body {
 
 .list {
   margin: 0;
-  padding: 0;
+  padding: 1rem;
   margin-left: 1rem;
   list-style: none;
 }
@@ -145,6 +145,27 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.filters button {
+  border: 1px solid hsl(200, 100%, 50%);
+  background: hsl(200, 100%, 30%);
+  border-radius: 0.25em;
+  width: 25%;
+  padding: 0.5em 0;
+  color: hsl(200, 100%, 90%);
+  cursor: pointer;
+}
+
+.filters button.active {
+  background: hsl(200, 100%, 50%, 0.1);
+  color: hsl(200, 100%, 50%);
 }
 
 @media only screen and (min-width: 32.5em) {

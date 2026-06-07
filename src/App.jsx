@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react"
 import {NewTodoForm} from "./NewTodoForm"
 import {TodoList} from "./TodoList"
+import {TodoFilter} from "./TodoFilter"
 import "./styles.css"
 
 export default function App() {
@@ -9,6 +10,14 @@ export default function App() {
         if (localValue == null) return []
         return JSON.parse(localValue)
       })  
+      const [filter, setFilter] = useState("all")
+
+      const filteredTodos = todos.filter(todo => {
+        if (filter === "active") return !todo.completed
+        if (filter === "completed") return todo.completed
+        return true
+    })
+
       useEffect(() => {
         localStorage.setItem("ITEMS", JSON.stringify(todos))
       }, [todos])
@@ -41,9 +50,18 @@ export default function App() {
 
   return (
   <>  
-   <NewTodoForm onSubmit={addTodo} />
-   <h1 className="header">Todo List</h1> 
-   <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
+   
+    <h1 className="header">Todo List</h1>
+
+    <TodoFilter filter={filter} setFilter={setFilter} />
+
+    <NewTodoForm onSubmit={addTodo} />
+
+    <TodoList
+      todos={filteredTodos}
+      toggleTodo={toggleTodo}
+      deleteTodo={deleteTodo}
+    />
   </>
   )
 }
