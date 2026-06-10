@@ -153,7 +153,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.filters button {
+.filters button{
   border: 1px solid hsl(200, 100%, 50%);
   background: hsl(200, 100%, 30%);
   border-radius: 0.25em;
@@ -166,6 +166,16 @@ body {
 .filters button.active {
   background: hsl(200, 100%, 50%, 0.1);
   color: hsl(200, 100%, 50%);
+}
+
+.completed {
+  border: 1px solid hsl(200, 100%, 50%);
+  background: hsl(200, 100%, 30%);
+  border-radius: 0.25em;
+  width: 100%;
+  padding: 0.5em 0;
+  color: hsl(200, 100%, 90%);
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 32.5em) {

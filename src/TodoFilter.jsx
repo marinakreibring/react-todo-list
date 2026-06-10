@@ -21,6 +21,7 @@ export function TodoFilter({ filter, setFilter }) {
       >
         Completed
       </button>
+      
     </div>
   )
 }

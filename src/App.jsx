@@ -47,6 +47,11 @@ export default function App() {
       return currentTodos.filter(todo => todo.id !== id)
     })
   } 
+  function clearCompleted() {
+  setTodos(currentTodos =>
+    currentTodos.filter(todo => !todo.completed)
+  )
+}
 
   return (
   <>  
@@ -62,6 +67,12 @@ export default function App() {
       toggleTodo={toggleTodo}
       deleteTodo={deleteTodo}
     />
+    <p>
+        {todos.filter(todo => todo.completed).length} of {todos.length} completed
+      </p>
+      <button className="completed" onClick={clearCompleted}>
+        Clear Completed
+      </button>
   </>
   )
 }
