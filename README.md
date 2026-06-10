@@ -18,7 +18,7 @@ A simple Todo application built with React and Vite.
 - CSS
 
 ## Live Demo
-(http://localhost:5173/)
+https://todo-list-react-two-puce.vercel.app/
 
 ## Installation
 
