@@ -56,8 +56,8 @@ export default function App() {
   return (
   <>  
    
-    <h1 className="header">Todo List</h1>
-
+    <h1 className="header">To-do List</h1>
+    <p>Organize your daily tasks</p>
     <TodoFilter filter={filter} setFilter={setFilter} />
 
     <NewTodoForm onSubmit={addTodo} />
